@@ -1,4 +1,4 @@
-import { Home, BookOpen, Trophy, Settings, User } from "lucide-react";
+import { Home, BookOpen, Trophy, Settings, User, Crown } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
@@ -40,15 +40,22 @@ export const Sidebar = () => {
       </nav>
       
       <div className="mt-8 p-4 gradient-primary rounded-lg">
-        <h3 className="font-semibold text-primary-foreground mb-2">
-          Premium Plan
-        </h3>
+        <div className="flex items-center gap-2 mb-2">
+          <Crown className="h-5 w-5 text-primary-foreground" />
+          <h3 className="font-semibold text-primary-foreground">
+            Premium Plan
+          </h3>
+        </div>
         <p className="text-sm text-primary-foreground/80 mb-3">
           Unlock all courses and features
         </p>
-        <button className="w-full bg-white text-primary px-4 py-2 rounded-lg font-semibold hover:bg-white/90 transition-smooth">
+        <NavLink 
+          to="/upgrade"
+          className="block w-full bg-white text-primary px-4 py-2 rounded-lg font-semibold hover:bg-white/90 transition-smooth text-center"
+          data-testid="link-upgrade"
+        >
           Upgrade Now
-        </button>
+        </NavLink>
       </div>
     </aside>
   );
